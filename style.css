@@ -1,0 +1,49 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+button {
+    margin: 1rem;
+}
+
+.btn {
+    background-color: #e3e3e3;
+    color: #222;
+    padding: .5em 1em;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: red;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ;
+}
+
+.btn:hover::before,
+.btn:focus::before {
+    transform: scaleX(1);
+}
+
+.btn {
+    z-index: 1;
+}
